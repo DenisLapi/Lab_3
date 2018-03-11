@@ -47,10 +47,10 @@ void read_matrix_from_file() {
 
 	fclose(file);
 
-	// decrease one because of the last value in the matrix ([n][m])
+	// minus one because of the last value in the matrix ([n][m])
 	max_row = row - 1; 
 
-	printf("Matrix from a file:\n\n");
+	printf("[IO] Matrix from a file:\n\n");
 	for(row = 0; row <= max_row; row++) {
 		for(col = 0; col <= max_col; col++) {
 			printf("%d ", matrix[row][col]);
@@ -72,13 +72,12 @@ void print_matrix_in_file(int row, int col) {
 
 	// Create matrix and add values
 
-	printf("Enter values in matrix to print in a file: \n\n");
+	printf("[IO] Enter values in matrix to print in a file: \n\n");
 
 	for(i = 0; i < row; i++) {
 		for(j = 0; j < col; j++) {
 			printf("matrix[%d][%d] = ", i, j);
 			scanf("%d", &matrix[i][j]);
-			//fprintf(file,"%d,", matrix[i][j]);
 			if(j != col - 1) {
 				fprintf(file,"%d, ", matrix[i][j]);
 			} else {
